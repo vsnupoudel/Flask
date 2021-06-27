@@ -2,11 +2,14 @@
 
 {% block main %}
 <p>Some content on the AboutPage!</p>
-<form method="post" action="/index">
+<form method="post" action="/about">
     {{ form.csrf_token }}
     {{ form.title }}
     {{ form.submit}}
     {{ form.title.label}}
     
 </form>
+{% if title %}
+<h1>{{ title }}</h1>
+{% endif %}
 {% endblock %}
